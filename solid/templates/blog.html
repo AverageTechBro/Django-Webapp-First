@@ -1,0 +1,120 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog.css' %}" />
+<section class="timeline">
+  <h1 class="timeline-header reveal">
+    How we help you find your perfect watch
+  </h1>
+  <ul>
+    <li>
+      <div>
+        <time>Step-1</time>
+        <div class="discovery">
+          <h1>Communication</h1>
+          <p>Our highly skilled drop outs will guide you</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Step-2</time>
+        <div class="discovery">
+          <h1>Browsing</h1>
+          <p>We will show you our fine collection and custom options</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Step-3</time>
+        <div class="discovery">
+          <h1>Confirmation</h1>
+          <p>After your selection is confirmed your watch will be prepared</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Step-4</time>
+        <div class="discovery">
+          <h1>What Now?</h1>
+          <p>I ran out of ideas to fill these</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Step-5</time>
+        <div class="discovery">
+          <h1>Rasputin</h1>
+          <p>There lived a certain man in Russia long ago.</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Step-6</time>
+        <div class="discovery">
+          <h1>Strong?</h1>
+          <p>He was big and strong with his eyes of flaming glow.</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Step-7</time>
+        <div class="discovery">
+          <h1>Finishing</h1>
+          <p>Thats all you have to do to get your perfect watch</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+<script>
+  var items = document.querySelectorAll(".timeline li");
+
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        if (!items[i].classList.contains("in-view")) {
+          items[i].classList.add("in-view");
+        }
+      } else if (items[i].classList.contains("in-view")) {
+        items[i].classList.remove("in-view");
+      }
+    }
+  }
+
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+</script>
+<script>
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", reveal);
+</script>

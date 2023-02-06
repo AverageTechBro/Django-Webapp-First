@@ -1,0 +1,162 @@
+{% extends 'main.html'%} {% load sass_tags %} {% load static %}
+<!DOCTYPE html>
+{% block content%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="home-container">
+      <div class="home-left-side">
+        <h1>
+          <span class="sub-title">Seize Your</span> <br />
+          <section class="home-title">
+            <p class="text-shadow">MOMENT</p>
+          </section>
+        </h1>
+        <p class="home-info-text">Find the watch that defines you</p>
+        <a href="#" class="cta">
+          <span class="span-text">Shop Now</span>
+          <svg
+            class="button-animation"
+            width="13px"
+            height="10px"
+            viewBox="0 0 13 10"
+          >
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+      </div>
+      <div class="home-right-side">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg?cs=srgb&dl=pexels-pixabay-277319.jpg&fm=jpg"
+                alt=""
+              />
+              <h3>Luxurica X1-A12</h3>
+              <p>
+                Try our new X1-A12 watch which is made up of platinum,<br />
+                it shows time.
+              </p>
+              <a href="#" class="cta">
+                <span class="span-text">Shop Now</span>
+                <svg
+                  class="button-animation"
+                  width="13px"
+                  height="10px"
+                  viewBox="0 0 13 10"
+                >
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0278/9723/3501/files/44-MB_F-Brands.jpg?v=1651006810"
+                alt=""
+              />
+              <h3>Luxurica Astrogem-PX41</h3>
+              <p>
+                With our space metal coated PX41 <br />
+                you will be able to see the time
+              </p>
+
+              <a href="#" class="cta">
+                <span class="span-text">Shop Now</span>
+                <svg
+                  class="button-animation"
+                  width="13px"
+                  height="10px"
+                  viewBox="0 0 13 10"
+                >
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2018/11/27204802/Ulysse_Nardin_Stranger_mood_LG-e1585313456432-1439x900.jpg"
+                alt=""
+              />
+              <h3>Luxurica Relic-CT51</h3>
+              <p>
+                Wearing our ancient gem coated CT51 <br />will allow you to see
+                time
+              </p>
+              <a href="#" class="cta">
+                <span class="span-text">Shop Now</span>
+                <svg
+                  class="button-animation"
+                  width="13px"
+                  height="10px"
+                  viewBox="0 0 13 10"
+                >
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://cdn3.boutique.humbleandrich.com/wp-content/uploads/2018/06/09222629/Most-Respected-Swiss-Luxury-Watch-Brands.jpg"
+                alt=""
+              />
+              <h3>Luxurica Modernica-AI82</h3>
+              <p>
+                With the futuristic design of our AI82 <br />you will be able to
+                see time
+              </p>
+              <a href="#" class="cta">
+                <span class="span-text">Shop Now</span>
+                <svg
+                  class="button-animation"
+                  width="13px"
+                  height="10px"
+                  viewBox="0 0 13 10"
+                >
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        loop: true,
+        autoplay: {
+          delay: 8000,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
+  {% for watches in watch %} {{watches.name}} {% endfor %}
+</html>
+{% endblock %}

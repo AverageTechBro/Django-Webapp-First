@@ -1,0 +1,49 @@
+.create-watch-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial;
+}
+.create-watch-container .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.create-watch-container .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.create-watch-container form {
+  width: 50%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+.create-watch-container label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.create-watch-container input[type=text], .create-watch-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.create-watch-container input[type=submit] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+.create-watch-container input[type=submit]:hover {
+  background-color: #3e8e41;
+}/*# sourceMappingURL=create-watch.css.map */

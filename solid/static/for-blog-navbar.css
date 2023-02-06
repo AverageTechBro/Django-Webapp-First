@@ -1,0 +1,94 @@
+.blog-navbar-container {
+  transition: background-image 2050ms;
+}
+.blog-navbar-container:hover {
+  background-image: linear-gradient(135deg, #dbdbdb 0%, #f8ddc7 50%);
+}
+.blog-navbar-container .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding-top: 2rem;
+  position: relative;
+}
+.blog-navbar-container .navbar-container .navbar-left-side img {
+  width: 80px;
+  margin-top: -1.5rem;
+  padding-bottom: 0.7rem;
+  padding-left: 3rem;
+}
+.blog-navbar-container .navbar-container .navbar-right-side {
+  margin-right: 2rem;
+  height: 100%;
+}
+.blog-navbar-container .navbar-container .navbar-right-side a {
+  padding-right: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: rgb(161, 166, 6);
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blog-navbar-container .btn {
+  position: relative;
+  display: inline-flex;
+  font-size: 0.6rem;
+  color: var(--inv);
+  letter-spacing: 0.4rem;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.blog-navbar-container .btn:before, .blog-navbar-container .btn:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+.blog-navbar-container .btn:hover {
+  color: var(--def);
+  transition-delay: 0.5s;
+}
+.blog-navbar-container .btn:hover:before {
+  transition-delay: 0s;
+}
+.blog-navbar-container .btn:hover:after {
+  background: var(--inv);
+  transition-delay: 0.35s;
+}
+.blog-navbar-container .from-top:before,
+.blog-navbar-container .from-top:after {
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+.blog-navbar-container .from-top:before {
+  bottom: 0;
+  border: 1px solid var(--inv);
+  border-top: 0;
+  border-bottom: 0;
+}
+.blog-navbar-container .from-top:after {
+  top: 0;
+  height: 0;
+}
+.blog-navbar-container .from-top:hover:before,
+.blog-navbar-container .from-top:hover:after {
+  height: 100%;
+}
+.blog-navbar-container body {
+  background: linear-gradient(109.6deg, rgb(0, 21, 48) 11.2%, rgb(16, 37, 60) 51.2%, rgb(2, 0, 43) 98.6%);
+  padding: 0.5rem 2rem;
+  margin: 0;
+  --def: #96B7C4;
+  --inv: rgba(26, 74, 247, 0.73);
+}/*# sourceMappingURL=for-blog-navbar.css.map */

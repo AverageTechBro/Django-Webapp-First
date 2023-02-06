@@ -1,0 +1,40 @@
+.create-blog-container{
+    font-family: Arial;
+    form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+      
+      input[type="text"],
+      textarea,
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      
+      button[type="submit"] {
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        float: right;
+      }
+      
+      h1{
+        text-align: center;
+      }
+}

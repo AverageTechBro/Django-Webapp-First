@@ -1,0 +1,10 @@
+{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'create-blog.css' %}" />
+<div class="create-blog-container">
+  <h1>Create a Blog</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+</div>
+{% endblock %}

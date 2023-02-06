@@ -1,0 +1,70 @@
+.register-page-container {
+  font-family: Arial;
+}
+.register-page-container .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.register-page-container h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.register-page-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+.register-page-container form input[type=text],
+.register-page-container form input[type=email],
+.register-page-container form input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+.register-page-container form button[type=submit] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.register-page-container p {
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+}
+.register-page-container a {
+  color: #4caf50;
+}
+.register-page-container .messages {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  list-style: none;
+}
+.register-page-container .messages li {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #333;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.register-page-container .messages .error {
+  background-color: #ffb3b3;
+}/*# sourceMappingURL=register-page.css.map */

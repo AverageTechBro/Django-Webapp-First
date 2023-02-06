@@ -1,0 +1,8 @@
+<h1>You Made it</h1>
+{{watches.name}}
+<br />
+{{watches.display}}
+<img src="{{watches.display.url}}" alt="" />
+{% for watches in watch %}
+<h3>{{ watches.name }}</h3>
+{% endfor %}

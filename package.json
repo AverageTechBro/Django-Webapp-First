@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bulma": "^0.9.4",
+    "sass": "^1.57.1",
+    "scss": "^0.2.4",
+    "swiper": "^8.4.5"
+  }
+}

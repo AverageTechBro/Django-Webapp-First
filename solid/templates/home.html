@@ -1,0 +1,105 @@
+{% extends 'main.html'%} {% load sass_tags %} {% load static %}
+<!DOCTYPE html>
+{% block content%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog.css' %}" />
+    <link rel="stylesheet" href="{% static 'act-blog.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'create-blog.css' %}" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="home-container">
+      <div class="home-left-side">
+        <h1>
+          <span class="sub-title">Seize Your</span> <br />
+          <section class="home-title">
+            <p class="text-shadow">MOMENT</p>
+          </section>
+        </h1>
+        <p class="home-info-text">Find the watch that defines you</p>
+        <a href="#" class="cta">
+          <span class="span-text">Shop Now</span>
+          <svg
+            class="button-animation"
+            width="13px"
+            height="10px"
+            viewBox="0 0 13 10"
+          >
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+      </div>
+      <div class="home-right-side">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            {% for watches in watch %}
+            <div class="swiper-slide">
+              {% if request.user.is_superuser %}
+              <div class="watch-slide-container">
+                <a href="{% url 'homeAdd' %}" style="padding: 5px 2rem"
+                  >Add a new slide</a
+                >
+              </div>
+              {% endif %}
+              <img src="{{watches.display.url}}" alt="" />
+              <h3>{{ watches.name }}</h3>
+              <p>{{ watches.description|linebreaks }}</p>
+              <a href="#" class="cta">
+                <span class="span-text">Shop Now</span>
+                <svg
+                  class="button-animation"
+                  width="13px"
+                  height="10px"
+                  viewBox="0 0 13 10"
+                >
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <a href="">Add a new slide</a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        loop: true,
+        autoplay: {
+          delay: 8000,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+    {% include 'blog.html' %} {% include 'act-blog.html' %}
+    <p></p>
+    <div class="home-footer-container" style="margin-top: 10rem">
+      {% include 'footer.html' %}
+    </div>
+  </body>
+</html>
+{% endblock %}

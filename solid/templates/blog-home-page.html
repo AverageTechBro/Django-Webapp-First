@@ -1,0 +1,36 @@
+<div class="blog-navbar-container">{% include 'navbar.html' %}</div>
+{% load static %}
+<style></style>
+<link rel="stylesheet" href="{% static 'blog-home-page.css' %}" />
+<link rel="stylesheet" href="{% static 'navbar.css' %}" />
+<div class="blog-home-page-container">
+  <div class="blog-container">
+    <h1 class="reveal">Check out our blogs!</h1>
+    {% if request.user.is_superuser %}
+    <a href="{% url 'createBlog' %}" class="blog-home-create-blog"
+      >Create Blogs <span>P.S -> only admins can see this</span></a
+    >
+    {% endif %}
+    <div class="primary-blog-wrapper">
+      <div class="blog-wrapper reveal">
+        {% for blog in blogs %}
+        <div class="ind-blog-container">
+          <div class="shader-background">
+            <img src="{{blog.thumbnail.url}}" alt="" width="500px" />
+            <div class="">
+              <h3>{{blog.title}}</h3>
+              <p>
+                {{blog.short_description}}
+                <a href="{% url 'blog' blog.id %}" class="readmore-tag"
+                  >Read More</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'footer.html' %}
